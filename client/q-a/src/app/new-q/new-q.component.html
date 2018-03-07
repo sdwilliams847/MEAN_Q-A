@@ -1,0 +1,27 @@
+<div class="navbar form-inline ">
+        <h1>Q&amp;A</h1>
+        <u><a class="navText" href="dashboard">Home</a></u>
+        <u><a class="navText" href="/">Logout</a></u>
+    </div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8">
+            <br><h3>New Question:</h3>
+            <fieldset>
+                <form class="qForm" (submit)="create()">
+                    <div class="form-group">
+                        <label for="content">Question: </label>
+                        <input type="text" class="form-control" name="question.content" [(ngModel)]="question.content">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="description">Description (optional): </label>
+                        <input type="text" class="form-control" name="question.description" [(ngModel)]="question.description">
+                    </div>
+                    <p class="error"*ngIf="errors">{{ errors }}</p>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form><br>
+            </fieldset>
+        </div>
+    </div>
+  </div>

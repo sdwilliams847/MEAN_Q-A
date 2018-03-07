@@ -1,0 +1,24 @@
+body {
+    background-color: #7E8F7C;
+}
+
+.container {
+    background-color: #FDF3E7;
+}
+
+.float {
+    float: right;
+}
+
+.navbar {
+    background-color: #C63D0F;
+    color: #3B3738;
+}
+
+.navText {
+    color: #3B3738;
+}
+
+.logout {
+    margin-right: 2.5%;
+}

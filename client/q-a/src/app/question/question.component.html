@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="navbar form-inline">
+        <h1>Q&amp;A</h1>
+        <u><a class="navText" href="dashboard">Home</a></u>
+        <u><a class="navText" *ngIf="question" href="newA/{{question._id}}">Answer the Question</a></u>
+        <u><a class="navText" href="/">Logout</a></u>
+    </div>
+    <div *ngIf="question">
+        <br><h1>{{ question.content }}</h1>
+        <p class="qdesc">{{question.description}}</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <form>
+                <div class="form-group row">
+                    <label for="search" class="col-sm-2 col-form-label">Search:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="search" [(ngModel)]="search">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Answers</th>
+                <th scope="col">Likes</th>
+            </tr>
+        </thead>
+    </table>
+
+    <div *ngIf="answers">
+        <div *ngFor="let ans of answers | search: search">
+            <div class="row">
+                <div class="col-md-6">
+                    <br><p>{{ ans._user.name }}:</p>
+                    <div class="info">
+                        <h4>{{ ans.content }}</h4>
+                        <p>{{ ans.description }}</p>
+                    </div>
+                </div>
+                <div class="col-md-1 like">
+                    <p>{{ ans.likes }} likes</p>
+                </div>
+                <div class="col-md-1 likeBtn">
+                    <button (click)="like(ans._id)" type="submit" class="btn btn-primary">Like!</button><br><br>
+                </div>
+          </div>
+        </div>
+    </div>
+
+</div>

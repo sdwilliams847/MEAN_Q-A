@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="navbar form-inline">
+        <h1>Q&amp;A</h1>
+        <u><a class="navText" href="dashboard">Home</a></u>
+        <u><a class="navText" *ngIf="question" href="question/{{question._id}}">Go Back to Question</a></u>
+        <u><a class="navText" href="/">Logout</a></u>
+    </div>
+    <div *ngIf="question">
+        <br><h2 class="question">{{ question.content }}</h2>
+        <p class="qdesc">{{question.description}}</p>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <br><fieldset>
+                <form (submit)="createAnswer()">
+                    <div class="form-group">
+                        <label>Your Answer: </label>
+                        <input type="text" class="form-control" name="answer.content" [(ngModel)]="answer.content">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Supporting Details for your answer (optional): </label>
+                        <input type="text" class="form-control" name="answer.description" [(ngModel)]="answer.description">
+                    </div>
+                    <p class="error"*ngIf="errors">{{ errors }}</p>
+                    <input type="submit" class="btn btn-primary">
+                </form><br>
+            </fieldset>
+        </div>
+    </div>
+</div>

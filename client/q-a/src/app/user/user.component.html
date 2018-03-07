@@ -1,0 +1,20 @@
+<div class="container">
+  <div>
+    <h1>Q&amp;A</h1>
+  </div>
+  <div class="row">
+      <div class="col-md-6">
+          <br><fieldset>
+              <form (submit)="register()">
+                  <div class="form-group">
+                      <label for="name">Name: </label>
+                      <input type="text" class="form-control" name="user.name" [(ngModel)]="user.name" placeholder="Enter Name">
+                  </div>
+                  <p class="error"*ngFor="let error of regErrors">{{error}}</p>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+      </fieldset>
+      </div>
+  </div>
+</div>

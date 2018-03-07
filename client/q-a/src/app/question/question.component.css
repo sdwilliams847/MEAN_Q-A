@@ -1,0 +1,32 @@
+.flex {
+    display: flex;
+}
+
+.like {
+    margin-top: 5.5%; 
+}
+
+.likeBtn {
+    margin-top: 4.5%; 
+}
+
+.info {
+    margin-left: 2.5%;
+}
+
+.navbar {
+    background-color: #C63D0F;
+    color: #3B3738;
+}
+
+.navText {
+    color: #3B3738;
+}
+
+.container {
+    background-color: #FDF3E7;
+}
+
+.qdesc {
+    margin-left: 1.5%;
+}
